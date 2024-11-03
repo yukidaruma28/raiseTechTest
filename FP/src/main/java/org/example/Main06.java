@@ -3,29 +3,30 @@ package org.example;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 public class Main06 {
 
   public static void main(String[] args) {
     int sum = 0;
-    for (int i = 0; i <= 10; i++){
+    for (int i = 0; i <= 10; i++) {
       sum += i;
     }
     System.out.println(sum);
 
-    List<String> studentNamelist = List.of("なかた","さとう","たかはし");
+    List<String> studentNamelist = List.of("なかた", "さとう", "たかはし");
     System.out.println(studentNamelist);
 
-    for(String name : studentNamelist){
+    for (String name : studentNamelist) {
       System.out.println(name);
     }
 
     int number = 10;
-    if(number == 1) {
+    if (number == 1) {
       System.out.println(1);
-    } else if(number == 2){
+    } else if (number == 2) {
       System.out.println(2);
-    } else if(number == 3){
+    } else if (number == 3) {
       System.out.println(3);
     } else {
       System.out.println(10);
@@ -40,11 +41,10 @@ public class Main06 {
     List<String> studentNames = List.of("ながさき", "さとう", "みわ", "いのうえ", "はじめ", "なか",
         "いがらし", "しま", "つ", "さくら");
     for (String names : studentNames) {
-      if (names.length() >= 3){
+      if (names.length() >= 3) {
         System.out.println(names);
       }
     }
-
 
     System.out.println("課題②");
     // Mapを作ってください。生徒名と番号の組み合わせ。(1,"江並")みたいな。
@@ -67,23 +67,30 @@ public class Main06 {
 //    );
 
     Map<Integer, String> studentNamesMap = new HashMap();
-      studentNamesMap.put(1,"ながさき");
-      studentNamesMap.put(2,"さとう");
-      studentNamesMap.put(3,"みわ");
-      studentNamesMap.put(4,"いのうえ");
-      studentNamesMap.put(5,"はじめ");
-      studentNamesMap.put(6,"なか");
-      studentNamesMap.put(7,"いがらし");
-      studentNamesMap.put(8,"しま");
-      studentNamesMap.put(9,"つ");
-      studentNamesMap.put(10,"さくら");
+    studentNamesMap.put(1, "ながさき");
+    studentNamesMap.put(2, "さとう");
+    studentNamesMap.put(3, "みわ");
+    studentNamesMap.put(4, "いのうえ");
+    studentNamesMap.put(5, "はじめ");
+    studentNamesMap.put(6, "なか");
+    studentNamesMap.put(7, "いがらし");
+    studentNamesMap.put(8, "しま");
+    studentNamesMap.put(9, "つ");
+    studentNamesMap.put(10, "さくら");
 
       for (Integer key = 0; key <= 10; key++){
+//        System.out.println("start loop");
+//        System.out.println("Key is " + key);
         if (key % 2 == 0){
+//          System.out.println("remove");
           studentNamesMap.remove(key);
         } else {
-          System.out.println(studentNamesMap);
+//          System.out.println("pass");
+//          System.out.println(studentNamesMap);
         }
       }
+      // else文は不要ですが、学習の跡を残すためにあえて残しています
+//    System.out.println("endIt");
+    System.out.println(studentNamesMap);
     }
   }
