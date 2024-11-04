@@ -52,19 +52,6 @@ public class Main06 {
     // Mapの中の番号が偶数のものをMapから削除する
     // 上記の処理を行う繰り返し処理を実装してください
     // 削除した状態のものを出力して表示してください
-//
-//      Map<Integer, String> studentNamesMap = Map.of(
-//        1,"ながさき",
-//        2,"さとう",
-//        3,"みわ",
-//        4,"いのうえ",
-//        5,"はじめ",
-//        6,"なか",
-//        7,"いがらし",
-//        8,"しま",
-//        9,"つ",
-//        10,"さくら"
-//    );
 
     Map<Integer, String> studentNamesMap = new HashMap();
     studentNamesMap.put(1, "ながさき");

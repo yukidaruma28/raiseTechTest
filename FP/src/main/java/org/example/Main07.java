@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -67,33 +68,52 @@ public class Main07 {
     // 参考URL https://enterprisegeeks.hatenablog.com/entry/2014/04/08/193834
     // 数値なのでList<Integer>にして、そのままfilterで数字の偶数奇数を判定したものの・・・
     //  .mapToInt();をどうやって使えばいいのかわからない・・・
-    //  .averageを使うために、int型にすることが必要？
+    //  .averageを使うために、int型にすることが必要？←間違っていた
     System.out.println("【課題3】");
     List<Integer> testScore = List.of(48, 27, 14, 89, 35, 66, 5, 92, 74, 60);
-
+    System.out.println("リストの奇数を出力");
     System.out.println(testScore.stream()
         .filter(n -> n % 2 == 1)
         .toList()
     );
 
-    testScore.stream()
+    // 参考URL：https://www.w3resource.com/java-exercises/stream/java-stream-exercise-1.php
+    // 整数型のIntegerで点数をリスト化
+    // プリミティブ型のdoubleに変数を設定して、この変数にtestScoreを入れて、SteamAPIを設定
+    // .mapTpDoubleでdouble型にして.averageを使えるようにする：https://amg-solution.jp/blog/2256
+    // .orElseでList.ofがない場合でも、(0.0)で返すようにしている
+    double oddAverage = testScore.stream()
+        .mapToDouble(Integer::doubleValue)
         .filter(n -> n % 2 == 1)
-        .forEach(System.out::println);
+        .average()
+        .orElse(0.0);
+    System.out.println("奇数だけの平均点は" + oddAverage + "点です。");
 
+    double allAverage = testScore.stream()
+        .mapToDouble(Integer::doubleValue)
+        .average()
+        .orElse(0.0);
 
-
-
-
-
+    System.out.println("要素10個の平均点は" + allAverage + "点です。");
 
 
     System.out.println("【課題4】");
     // ChatGPTを使って、StreamAPIの基礎的な課題を1つ作ってもらい、実践してみる
+//    10個の文字列を持つリストを作成してください。
+//    リストの中から「文字数が5以上」の要素だけを抽出してください。
+//    抽出された文字列を「大文字」に変換してください。
+//    カンマ（,）で区切った形で1つの文字列として出力してください。
 
-
+    List<String> foods = List.of("apple", "kiwi", "banana", "pear", "grape", "mango", "plum", "fig", "orange", "lemon");
+    System.out.println("フィルター 文字数5つ以上");
+    System.out.println(foods.stream()
+        .filter(n -> n.length() >= 5)
+        .toList()
+    );
 
 
     //質問 forEachとprintlnでの出力形式の違いは？
 
   }
+
 }
