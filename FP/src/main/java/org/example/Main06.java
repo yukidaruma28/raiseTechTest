@@ -79,18 +79,10 @@ public class Main06 {
     studentNamesMap.put(10, "さくら");
 
       for (Integer key = 0; key <= 10; key++){
-//        System.out.println("start loop");
-//        System.out.println("Key is " + key);
         if (key % 2 == 0){
-//          System.out.println("remove");
           studentNamesMap.remove(key);
-        } else {
-//          System.out.println("pass");
-//          System.out.println(studentNamesMap);
         }
       }
-      // else文は不要ですが、学習の跡を残すためにあえて残しています
-//    System.out.println("endIt");
     System.out.println(studentNamesMap);
     }
   }
